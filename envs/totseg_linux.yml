@@ -1,0 +1,32 @@
+# conda env create -f envs/totseg_linux.yml
+# 
+# Set strict channel priority:
+#   conda config --set channel_priority strict
+#
+# (Optional) Use libmamba solver for faster dependency resolution:
+#   conda config --set solver libmamba
+
+name: totseg
+
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+
+dependencies:
+  # ---- Core language & package manager ----
+  - python=3.10
+  - pip
+
+  # ---- Deep Learning (CUDA 11.8 build) ----
+  - pytorch=2.5.1
+  - torchvision=0.20.1
+  - torchaudio=2.5.1
+  - pytorch-cuda=11.8
+
+  # Requires xvfb sudo install for preview # sudo apt-get install -y xvfb
+
+  - pip:
+      - TotalSegmentator   # Install TotalSegmentator via pip
+      - fury               # Visualization library dependency for TotalSegmentator
