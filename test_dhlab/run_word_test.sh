@@ -5,11 +5,11 @@
 set -euo pipefail
 
 # ---- CONFIG ----
-INPUT_DIR="/home/data/2025_WORD/WORD-V0.1.0/imagesVal"
+INPUT_DIR="/home/data/2025_RAOS/RAOS-Real/RAOS-Real/CancerImages(Set1)/imagesVal"
 OUT_BASE="/home/cyshin/projects/DHLAB-TotalSegmentator/_output"
 ROI="colon"
 USE_PREVIEW=1
-NICE_LEVEL=10                   # lower CPU priority (0..19); set to 0 to disable
+NICE_LEVEL=0                   # lower CPU priority (0..19); set to 0 to disable
 IONICE_CLASS="best-effort"      # or "idle"; set empty to disable
 TOTALSEG_CMD="TotalSegmentator"
 # Optional: centralize weights so they’re reused by all runs
